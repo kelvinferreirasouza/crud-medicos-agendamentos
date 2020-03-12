@@ -17,8 +17,8 @@ class CreateSchedulesTable extends Migration
             $table->increments('id');
             $table->integer('doctor_id')->unsigned()->onDelete('cascade');
             $table->foreign('doctor_id')->references('id')->on('doctors')->onDelete('cascade');
-            $table->string('date', 112)->unique();
-            $table->string('busy', 112);
+            $table->date('date');
+            $table->integer('busy')->default(0);
             $table->timestamps();
         });
     }
