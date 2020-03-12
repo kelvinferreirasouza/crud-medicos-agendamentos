@@ -11,4 +11,14 @@ class Schedule extends Model
     ];
 
     protected $table = 'schedules';
+
+    public function getStatusSchedule($status)
+    {
+        $codStatus = [
+            0 => 'Disponível',
+            1 => 'Agendado'
+        ];
+
+        return $codStatus[$status];
+    }
 }
